@@ -160,8 +160,8 @@ BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX_LOCATION := 4
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 11796480000
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 11796480000
+#BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 PRODUCT_FS_COMPRESSION := 1
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_MOUNT_SDCARD_RW := true
@@ -282,6 +282,9 @@ BOARD_USES_SCALER_M2M1SHOT := true
 BOARD_USES_DT := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
+# Manifests
+#DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs201/device_framework_matrix_product.xml
+
 # PLATFORM LOG
 TARGET_USES_LOGD := true
 
@@ -389,4 +392,6 @@ BOARD_PVMFWIMAGE_PARTITION_SIZE := 0x00100000
 # pick up library for cleaning digital car keys on factory reset
 -include vendor/google_devices/gs-common/proprietary/BoardConfigVendor.mk
 
-include device/google/gs201/BoardConfigLineage.mk
+include device/google/gs201/BoardConfigVoltage.mk
+
+
