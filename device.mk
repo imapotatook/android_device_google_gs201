@@ -1118,6 +1118,18 @@ PRODUCT_PACKAGES += \
 ## Start packet router
 include device/google/gs101/telephony/pktrouter.mk
 
+# Enforce privapp-permissions whitelist
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ro.control_privapp_permissions=log
+#
+
+#PRODUCT_PRODUCT_PROPERTIES += \
+#ro.control_privapp_permissions=log \
+#ro.adb.secure=0 \
+#persist.sys.usb.config=mtp,adb \
+#persist.service.debuggable=1 \
+#persist.service.adb.enable=1
+
 # Thermal HAL
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.enable.thermal.genl=true
 include hardware/google/pixel/thermal/device.mk
