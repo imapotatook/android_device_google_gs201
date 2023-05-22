@@ -1,2 +1,0 @@
-binder_call(hal_camera_server, dumpstate);
-binder_use(dumpstate);
