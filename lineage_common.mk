@@ -32,10 +32,11 @@ PRODUCT_PACKAGES += \
     GoogleParts
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := false
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED), true)
 PRODUCT_PACKAGES += \
     FaceEnrollOverlay \
     FaceEnrollSettingsOverlay
+endif
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.biometrics.face.xml
