@@ -52,7 +52,8 @@ PRODUCT_SOONG_NAMESPACES += \
 	vendor/google_devices/common/proprietary/confirmatioui_hal \
 	vendor/google_nos/host/android \
 	vendor/google_nos/test/system-test-harness \
-	vendor/google/camera
+	vendor/google/camera \
+	vendor/carriersettings-extractor
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -1223,3 +1224,8 @@ PRODUCT_COPY_FILES += \
 
 # Call deleteAllKeys if vold detects a factory reset
 PRODUCT_VENDOR_PROPERTIES += ro.crypto.metadata_init_delete_all_keys.enabled?=true
+ifneq ($(BOARD_WITHOUT_RADIO),true)
+    PRODUCT_PACKAGES += \
+        extracted-carrierconfig \
+        extracted-apns
+endif
